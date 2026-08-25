@@ -1,47 +1,42 @@
 
-# C Utility Library — Custom String & Bitwise Operations
+# C Utility Library - String and Bitwise Operations
 
-A lightweight C utility library implementing fundamental string manipulation and bitwise operations from scratch, without relying on standard library functions.
+Implemented basic string manipulation and bitwise operations in C from scratch without using standard library functions like string.h. Built this to strengthen my understanding of pointers, memory handling, and bit-level operations.
 
-## Purpose
+## Why I Built This
 
-Demonstrates low-level C programming skills including:
-- Pointer arithmetic and memory manipulation
-- Bitwise operations for register-level control
-- Clean, modular code structure with documentation
+As an ECE graduate with embedded C background, I wanted to practice writing low-level C code the way it's done in real embedded systems - using pointer arithmetic instead of relying on built-in functions. This also helped me revise concepts like bit masking which is used heavily in register programming.
 
 ## Project Structure
 
 
 
-## Modules
+## What's Inside
 
-### String Utilities (my_string.h)
-| Function | Description |
-|----------|-------------|
-| `my_strlen()` | Calculate string length using pointer traversal |
-| `my_strcpy()` | Copy source string to destination |
-| `my_strcmp()` | Compare two strings lexicographically |
-| `my_strrev()` | Reverse a string in-place |
-| `my_strcat()` | Concatenate two strings |
-| `my_toupper()` | Convert string to uppercase |
-| `my_count_vowels()` | Count vowels in a string |
-| `my_is_palindrome()` | Check if string is a palindrome |
+### String Functions (my_string.h)
 
-### Bitwise Utilities (my_bitwise.h)
-| Function | Description |
-|----------|-------------|
-| `set_bit()` | Set a specific bit position |
-| `clear_bit()` | Clear a specific bit position |
-| `toggle_bit()` | Toggle a specific bit position |
-| `check_bit()` | Check if a bit is set |
-| `count_set_bits()` | Count number of 1s (Brian Kernighan's Algorithm) |
-| `is_power_of_two()` | Check if number is power of 2 |
-| `reverse_bits()` | Reverse all bits in a 32-bit integer |
-| `swap_without_temp()` | Swap two numbers using XOR |
-| `print_binary()` | Print binary representation of a number |
+- `my_strlen()` - finds string length by traversing with pointer
+- `my_strcpy()` - copies one string to another
+- `my_strcmp()` - compares two strings character by character
+- `my_strrev()` - reverses string in-place using two pointers
+- `my_strcat()` - joins two strings together
+- `my_toupper()` - converts lowercase to uppercase using ASCII math
+- `my_count_vowels()` - counts vowels (handles both cases)
+- `my_is_palindrome()` - checks palindrome using start and end pointers
 
-## How to Compile and Run
+### Bitwise Functions (my_bitwise.h)
+
+- `set_bit()` - sets a bit at given position using OR
+- `clear_bit()` - clears a bit using AND with inverted mask
+- `toggle_bit()` - flips a bit using XOR
+- `check_bit()` - checks if bit is 1 or 0
+- `count_set_bits()` - counts 1s using Brian Kernighan's method
+- `is_power_of_two()` - uses the n & (n-1) trick
+- `reverse_bits()` - reverses all 32 bits
+- `swap_without_temp()` - swaps two numbers using XOR
+- `print_binary()` - prints number in binary form
+
+## How to Compile
 
 ```bash
 gcc -o c_utils main.c src/my_string.c src/my_bitwise.c -Iinclude
